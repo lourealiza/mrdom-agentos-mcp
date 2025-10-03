@@ -1,0 +1,100 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: mrdom-sdr-agentos-rules
+  namespace: mrdom
+  labels:
+    app: mrdom-sdr-agentos
+spec:
+  groups:
+  - name: mrdom-sdr-agentos.rules
+    rules:
+    - alert: MrDomSDRHighErrorRate
+      expr: rate(http_requests_total{status=~"5.."}[5m]) > 0.1
+      for: 5m
+      labels:
+        severity: critical
+      annotations:
+        summary: "High error rate detected"
+        description: "Error rate is {{ $value }} errors per second"
+    
+    - alert: MrDomSDRHighLatency
+      expr: histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m])) > 1
+      for: 5m
+      labels:
+        severity: warning
+      annotations:
+        summary: "High latency detected"
+        description: "95th percentile latency is {{ $value }} seconds"
+    
+    - alert: MrDomSDRLowMemory
+      expr: (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes) < 0.1
+      for: 5m
+      labels:
+        severity: critical
+      annotations:
+        summary: "Low memory available"
+        description: "Only {{ $value }}% memory available"
+    
+    - alert: MrDomSDRHighCPU
+      expr: rate(process_cpu_seconds_total[5m]) > 0.8
+      for: 5m
+      labels:
+        severity: warning
+      annotations:
+        summary: "High CPU usage"
+        description: "CPU usage is {{ $value }}%"
+    
+    - alert: MrDomSDRPodDown
+      expr: up{job="mrdom-sdr-agentos"} == 0
+      for: 1m
+      labels:
+        severity: critical
+      annotations:
+        summary: "Pod is down"
+        description: "Pod {{ $labels.instance }} is down"
+    
+    - alert: MrDomSDRDatabaseConnection
+      expr: up{job="postgres"} == 0
+      for: 1m
+      labels:
+        severity: critical
+      annotations:
+        summary: "Database connection failed"
+        description: "Cannot connect to PostgreSQL database"
+    
+    - alert: MrDomSDRRedisConnection
+      expr: up{job="redis"} == 0
+      for: 1m
+      labels:
+        severity: critical
+      annotations:
+        summary: "Redis connection failed"
+        description: "Cannot connect to Redis database"
+    
+    - alert: MrDomSDRAgentUnavailable
+      expr: mrdom_agents_available == 0
+      for: 2m
+      labels:
+        severity: critical
+      annotations:
+        summary: "No agents available"
+        description: "All MrDom SDR agents are unavailable"
+    
+    - alert: MrDomSDRHighRequestRate
+      expr: rate(http_requests_total[5m]) > 100
+      for: 5m
+      labels:
+        severity: warning
+      annotations:
+        summary: "High request rate"
+        description: "Request rate is {{ $value }} requests per second"
+    
+    - alert: MrDomSDRDiskSpaceLow
+      expr: (node_filesystem_avail_bytes / node_filesystem_size_bytes) < 0.1
+      for: 5m
+      labels:
+        severity: critical
+      annotations:
+        summary: "Low disk space"
+        description: "Only {{ $value }}% disk space available"

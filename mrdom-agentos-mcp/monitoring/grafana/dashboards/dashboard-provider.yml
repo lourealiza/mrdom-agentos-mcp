@@ -1,0 +1,392 @@
+apiVersion: 1
+
+providers:
+  - name: 'mrdom-sdr-agentos-dashboards'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/mrdom-sdr-agentos
+
+  - name: 'mrdom-sdr-agentos-complete-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/mrdom-sdr-agentos-complete
+
+  - name: 'agentos-metrics-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/agentos-metrics
+
+  - name: 'business-metrics-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/business-metrics
+
+  - name: 'system-metrics-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/system-metrics
+
+  - name: 'security-metrics-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/security-metrics
+
+  - name: 'performance-metrics-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/performance-metrics
+
+  - name: 'availability-metrics-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/availability-metrics
+
+  - name: 'cost-metrics-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/cost-metrics
+
+  - name: 'quality-metrics-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/quality-metrics
+
+  - name: 'user-metrics-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/user-metrics
+
+  - name: 'integration-metrics-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/integration-metrics
+
+  - name: 'scalability-metrics-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/scalability-metrics
+
+  - name: 'compliance-metrics-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/compliance-metrics
+
+  - name: 'innovation-metrics-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/innovation-metrics
+
+  - name: 'sustainability-metrics-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/sustainability-metrics
+
+  - name: 'ux-metrics-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/ux-metrics
+
+  - name: 'tech-innovation-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/tech-innovation
+
+  - name: 'digital-business-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/digital-business
+
+  - name: 'leadership-metrics-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/leadership-metrics
+
+  - name: 'organizational-culture-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/organizational-culture
+
+  - name: 'social-responsibility-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/social-responsibility
+
+  - name: 'governance-metrics-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/governance-metrics
+
+  - name: 'digital-transformation-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/digital-transformation
+
+  - name: 'agility-metrics-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/agility-metrics
+
+  - name: 'resilience-metrics-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/resilience-metrics
+
+  - name: 'operational-excellence-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/operational-excellence
+
+  - name: 'product-excellence-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/product-excellence
+
+  - name: 'service-excellence-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/service-excellence
+
+  - name: 'data-excellence-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/data-excellence
+
+  - name: 'technology-excellence-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/technology-excellence
+
+  - name: 'people-excellence-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/people-excellence
+
+  - name: 'process-excellence-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/process-excellence
+
+  - name: 'innovation-excellence-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/innovation-excellence
+
+  - name: 'sustainability-excellence-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/sustainability-excellence
+
+  - name: 'governance-excellence-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/governance-excellence
+
+  - name: 'leadership-excellence-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/leadership-excellence
+
+  - name: 'culture-excellence-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/culture-excellence
+
+  - name: 'social-responsibility-excellence-dashboard'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/social-responsibility-excellence

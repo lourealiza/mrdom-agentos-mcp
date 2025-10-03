@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: mrdom
+  labels:
+    name: mrdom
+    environment: production
+    team: dom-360

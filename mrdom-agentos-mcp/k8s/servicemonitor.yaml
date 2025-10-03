@@ -1,0 +1,19 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: mrdom-sdr-agentos-monitor
+  namespace: mrdom
+  labels:
+    app: mrdom-sdr-agentos
+spec:
+  selector:
+    matchLabels:
+      app: mrdom-sdr-agentos
+  endpoints:
+  - port: http
+    path: /metrics
+    interval: 30s
+    scrapeTimeout: 10s
+  namespaceSelector:
+    matchNames:
+    - mrdom

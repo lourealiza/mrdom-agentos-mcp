@@ -1,0 +1,235 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "MrDom SDR Governance Excellence Dashboard",
+    "tags": ["mrdom", "governance", "excellence", "compliance"],
+    "style": "dark",
+    "timezone": "browser",
+    "refresh": "30s",
+    "time": {
+      "from": "now-30d",
+      "to": "now"
+    },
+    "panels": [
+      {
+        "id": 1,
+        "title": "Governance Excellence Score",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "mrdom_governance_excellence_score",
+            "legendFormat": "Governance Excellence Score"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "vis": false
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "red",
+                  "value": null
+                },
+                {
+                  "color": "yellow",
+                  "value": 70
+                },
+                {
+                  "color": "green",
+                  "value": 90
+                }
+              ]
+            }
+          }
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": 2,
+        "title": "Compliance Excellence Score",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "mrdom_compliance_excellence_score",
+            "legendFormat": "Compliance Excellence Score"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "vis": false
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "red",
+                  "value": null
+                },
+                {
+                  "color": "yellow",
+                  "value": 70
+                },
+                {
+                  "color": "green",
+                  "value": 90
+                }
+              ]
+            }
+          }
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 0
+        }
+      },
+      {
+        "id": 3,
+        "title": "Governance Excellence Timeline",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "mrdom_governance_excellence_score",
+            "legendFormat": "Governance Excellence"
+          },
+          {
+            "expr": "mrdom_compliance_excellence_score",
+            "legendFormat": "Compliance Excellence"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 24,
+          "x": 0,
+          "y": 8
+        }
+      },
+      {
+        "id": 4,
+        "title": "Governance Excellence Dimensions Distribution",
+        "type": "piechart",
+        "targets": [
+          {
+            "expr": "sum by (dimension) (mrdom_governance_excellence_dimensions_distribution)",
+            "legendFormat": "{{dimension}}"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 16
+        }
+      },
+      {
+        "id": 5,
+        "title": "Governance Excellence Initiatives",
+        "type": "table",
+        "targets": [
+          {
+            "expr": "mrdom_governance_excellence_initiatives",
+            "legendFormat": "{{initiative}}"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 16
+        }
+      },
+      {
+        "id": 6,
+        "title": "Governance Excellence Impact",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "mrdom_governance_excellence_impact",
+            "legendFormat": "{{impact}}"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 24,
+          "x": 0,
+          "y": 24
+        }
+      },
+      {
+        "id": 7,
+        "title": "Overall Governance Excellence Score",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "mrdom_overall_governance_excellence_score",
+            "legendFormat": "Overall Governance Excellence Score"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "vis": false
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "red",
+                  "value": null
+                },
+                {
+                  "color": "yellow",
+                  "value": 70
+                },
+                {
+                  "color": "green",
+                  "value": 90
+                }
+              ]
+            }
+          }
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 24,
+          "x": 0,
+          "y": 32
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: mrdom-sdr-agentos-pdb
+  namespace: mrdom
+spec:
+  minAvailable: 2
+  selector:
+    matchLabels:
+      app: mrdom-sdr-agentos

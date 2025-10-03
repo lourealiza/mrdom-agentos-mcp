@@ -1,0 +1,90 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mrdom-alertmanager-config
+  namespace: mrdom
+data:
+  alertmanager.yml: |
+    global:
+      smtp_smarthost: 'localhost:587'
+      smtp_from: 'alerts@mrdom.com.br'
+    
+    route:
+      group_by: ['alertname']
+      group_wait: 10s
+      group_interval: 10s
+      repeat_interval: 1h
+      receiver: 'web.hook'
+      routes:
+      - match:
+          severity: critical
+        receiver: 'critical-alerts'
+      - match:
+          severity: warning
+        receiver: 'warning-alerts'
+    
+    receivers:
+    - name: 'web.hook'
+      webhook_configs:
+      - url: 'http://mrdom-sdr-agentos-service:8000/api/v1/alerts'
+    
+    - name: 'critical-alerts'
+      email_configs:
+      - to: 'devops@dom360.com.br'
+        subject: 'CRITICAL: {{ .GroupLabels.alertname }}'
+        body: |
+          {{ range .Alerts }}
+          Alert: {{ .Annotations.summary }}
+          Description: {{ .Annotations.description }}
+          {{ end }}
+    
+    - name: 'warning-alerts'
+      email_configs:
+      - to: 'alerts@dom360.com.br'
+        subject: 'WARNING: {{ .GroupLabels.alertname }}'
+        body: |
+          {{ range .Alerts }}
+          Alert: {{ .Annotations.summary }}
+          Description: {{ .Annotations.description }}
+          {{ end }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mrdom-alertmanager
+  namespace: mrdom
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mrdom-alertmanager
+  template:
+    metadata:
+      labels:
+        app: mrdom-alertmanager
+    spec:
+      containers:
+      - name: alertmanager
+        image: prom/alertmanager:latest
+        ports:
+        - containerPort: 9093
+        volumeMounts:
+        - name: config
+          mountPath: /etc/alertmanager
+        args:
+        - '--config.file=/etc/alertmanager/alertmanager.yml'
+        - '--storage.path=/alertmanager'
+        - '--web.external-url=http://localhost:9093'
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mrdom-alertmanager-service
+  namespace: mrdom
+spec:
+  selector:
+    app: mrdom-alertmanager
+  ports:
+  - port: 9093
+    targetPort: 9093
+  type: ClusterIP

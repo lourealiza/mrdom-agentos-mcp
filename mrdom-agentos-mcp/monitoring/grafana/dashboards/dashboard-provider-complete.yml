@@ -1,0 +1,183 @@
+apiVersion: 1
+
+providers:
+  - name: 'mrdom-sdr-agentos-dashboards'
+    orgId: 1
+    folder: 'MrDom SDR AgentOS'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/mrdom-sdr-agentos
+
+  - name: 'agentos-metrics-dashboard'
+    orgId: 1
+    folder: 'AgentOS Metrics'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/agentos-metrics
+
+  - name: 'business-metrics-dashboard'
+    orgId: 1
+    folder: 'Business Metrics'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/business-metrics
+
+  - name: 'system-metrics-dashboard'
+    orgId: 1
+    folder: 'System Metrics'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/system-metrics
+
+  - name: 'security-metrics-dashboard'
+    orgId: 1
+    folder: 'Security Metrics'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/security-metrics
+
+  - name: 'performance-metrics-dashboard'
+    orgId: 1
+    folder: 'Performance Metrics'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/performance-metrics
+
+  - name: 'availability-metrics-dashboard'
+    orgId: 1
+    folder: 'Availability Metrics'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/availability-metrics
+
+  - name: 'cost-metrics-dashboard'
+    orgId: 1
+    folder: 'Cost Metrics'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/cost-metrics
+
+  - name: 'quality-metrics-dashboard'
+    orgId: 1
+    folder: 'Quality Metrics'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/quality-metrics
+
+  - name: 'user-metrics-dashboard'
+    orgId: 1
+    folder: 'User Metrics'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/user-metrics
+
+  - name: 'integration-metrics-dashboard'
+    orgId: 1
+    folder: 'Integration Metrics'
+    type: file
+    disableDeletion: false
+
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/integration-metrics
+
+  - name: 'scalability-metrics-dashboard'
+    orgId: 1
+    folder: 'Scalability Metrics'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/scalability-metrics
+
+  - name: 'compliance-metrics-dashboard'
+    orgId: 1
+    folder: 'Compliance Metrics'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/compliance-metrics
+
+  - name: 'innovation-metrics-dashboard'
+    orgId: 1
+    folder: 'Innovation Metrics'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/innovation-metrics
+
+  - name: 'sustainability-excellence-dashboard'
+    orgId: 1
+    folder: 'Excellence Dashboards'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/sustainability-excellence
+
+  - name: 'leadership-excellence-dashboard'
+    orgId: 1
+    folder: 'Excellence Dashboards'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/leadership-excellence
+
+  - name: 'culture-excellence-dashboard'
+    orgId: 1
+    folder: 'Excellence Dashboards'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/culture-excellence
+
+  - name: 'social-responsibility-excellence-dashboard'
+    orgId: 1
+    folder: 'Excellence Dashboards'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/social-responsibility-excellence

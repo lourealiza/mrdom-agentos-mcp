@@ -1,0 +1,56 @@
+# MrDom SDR AgentOS + Bedrock Requirements
+# Sistema de automação de vendas com agentes inteligentes
+
+# Core Framework
+fastapi==0.114.1
+uvicorn[standard]==0.30.6
+pydantic==2.8.2
+pydantic-settings==2.10.1
+
+# AgentOS - Sistema de Agentes Avançados
+agno>=2.1.0
+
+# AWS Bedrock Integration
+boto3>=1.34.0
+botocore>=1.34.0
+
+# OpenAI (Fallback)
+openai==1.51.2
+
+# HTTP Client
+httpx==0.27.0
+
+# Data Processing
+python-multipart==0.0.20
+python-dotenv==1.0.1
+python-dateutil==2.9.0.post0
+
+# Database
+asyncpg>=0.29.0
+redis==5.0.3
+
+# Monitoring & Logging
+structlog==23.2.0
+prometheus-fastapi-instrumentator==7.1.0
+asgi-correlation-id==4.2.0
+
+# Validation
+email-validator==2.3.0
+
+# Testing
+pytest==8.4.2
+pytest-asyncio==0.21.1
+pytest-mock==3.12.0
+
+# Development
+black==23.11.0
+isort==5.12.0
+flake8==6.1.0
+mypy==1.7.1
+
+# Documentation
+mkdocs==1.5.3
+mkdocs-material==9.4.8
+
+# Security
+cryptography>=41.0.0

@@ -1,0 +1,104 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mrdom-sdr-agentos
+  namespace: mrdom
+  labels:
+    app: mrdom-sdr-agentos
+    version: v1.0.0
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mrdom-sdr-agentos
+  template:
+    metadata:
+      labels:
+        app: mrdom-sdr-agentos
+        version: v1.0.0
+    spec:
+      containers:
+      - name: mrdom-sdr-agentos
+        image: dom360/mrdom-sdr-agentos:latest
+        ports:
+        - containerPort: 8000
+          name: http
+        env:
+        - name: AWS_ACCESS_KEY_ID
+          valueFrom:
+            secretKeyRef:
+              name: mrdom-secrets
+              key: aws-access-key-id
+        - name: AWS_SECRET_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              name: mrdom-secrets
+              key: aws-secret-access-key
+        - name: AWS_DEFAULT_REGION
+          value: "us-east-1"
+        - name: BEDROCK_MODEL
+          value: "amazon.nova-lite-v1:0"
+        - name: OPENAI_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: mrdom-secrets
+              key: openai-api-key
+        - name: CHATWOOT_ACCESS_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: mrdom-secrets
+              key: chatwoot-access-token
+        - name: CHATWOOT_ACCOUNT_ID
+          valueFrom:
+            secretKeyRef:
+              name: mrdom-secrets
+              key: chatwoot-account-id
+        - name: DATABASE_URL
+          valueFrom:
+            secretKeyRef:
+              name: mrdom-secrets
+              key: database-url
+        - name: REDIS_URL
+          valueFrom:
+            secretKeyRef:
+              name: mrdom-secrets
+              key: redis-url
+        - name: ENVIRONMENT
+          value: "production"
+        - name: DEBUG
+          value: "false"
+        - name: LOG_LEVEL
+          value: "INFO"
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /api/v1/health
+            port: 8000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /api/v1/ready
+            port: 8000
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        volumeMounts:
+        - name: logs
+          mountPath: /app/logs
+        - name: data
+          mountPath: /app/data
+      volumes:
+      - name: logs
+        persistentVolumeClaim:
+          claimName: mrdom-logs-pvc
+      - name: data
+        persistentVolumeClaim:
+          claimName: mrdom-data-pvc
+      imagePullSecrets:
+      - name: docker-registry-secret
